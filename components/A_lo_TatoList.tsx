@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemedArticle } from '../types';
+import { AlotatoArticle } from '../types';
 import { fetchA_lo_TatoArticles } from '../services/alotatoService';
+import NewsCard from './NewsCard';
 import DolarRates from './DolarRates';
 
 const A_lo_TatoList: React.FC = () => {
-  const [articles, setArticles] = useState<ThemedArticle[]>([]);
+  const [articles, setArticles] = useState<AlotatoArticle[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -38,13 +39,7 @@ const A_lo_TatoList: React.FC = () => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {articles.map((article) => (
-          <Link to={`/alotato/${article.id}`} key={article.id} className="block bg-white rounded-lg shadow-lg border-2 border-purple-300 overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div className="p-6">
-              <p className="text-sm text-gray-500 mb-2">{article.date}</p>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{article.title}</h3>
-              <p className="text-blue-600 hover:text-blue-800 font-semibold">Leer más &rarr;</p>
-            </div>
-          </Link>
+          <NewsCard key={article.id} article={article} basePath="/alotato" />
         ))}
       </div>
     );

@@ -10,22 +10,13 @@ const Header: React.FC<HeaderProps> = ({ onSearchClick }) => {
   const [isOpen, setIsOpen] = useState(false); // State for mobile menu
 
   const getSectionTitle = (pathname: string) => {
-    switch (pathname) {
-      case '/analisis':
-        return 'ANÁLISIS';
-      case '/george':
-        return 'GEORGE';
-      case '/alotato':
-        return 'A LO TATO';
-      case '/redes':
-        return 'REDES';
-      case '/quienessos':
-        return 'QUIÉN ES QUIÉN';
-      case '/zoom':
-        return 'ZOOM';
-      default:
-        return 'NOTICIAS';
-    }
+    if (pathname.startsWith('/analisis')) return 'ANÁLISIS';
+    if (pathname.startsWith('/george')) return 'GEORGE';
+    if (pathname.startsWith('/alotato')) return 'A LO TATO';
+    if (pathname.startsWith('/redes')) return 'REDES';
+    if (pathname.startsWith('/quienessos')) return 'QUIÉN ES QUIÉN';
+    if (pathname.startsWith('/zoom')) return 'ZOOM';
+    return 'NOTICIAS';
   };
 
   const sectionTitle = getSectionTitle(location.pathname);

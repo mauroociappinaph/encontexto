@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Analysis } from '../types';
 import { fetchAnalyses } from '../services/analysisService';
 import DolarRates from './DolarRates';
+import NewsCard from './NewsCard';
 
 const AnalysisList: React.FC = () => {
   const [analyses, setAnalyses] = useState<Analysis[]>([]);
@@ -46,13 +47,7 @@ const AnalysisList: React.FC = () => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {analyses.map((analysis) => (
-          <Link to={`/analisis/${analysis.id}`} key={analysis.id} className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div className="p-6">
-              <p className="text-sm text-gray-500 mb-2">{analysis.date}</p>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{analysis.title}</h3>
-              <p className="text-blue-600 hover:text-blue-800 font-semibold">Leer más &rarr;</p>
-            </div>
-          </Link>
+          <NewsCard key={analysis.id} article={analysis} basePath="/analisis" />
         ))}
       </div>
     );

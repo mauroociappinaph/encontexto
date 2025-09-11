@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": 1,
+    "imageUrl": "https://placehold.co/600x400/f0f0f0/333?text=El+País+de+las+Paradojas",
+    "date": "11 SEP 2025",
+    "titular": "El País de las Paradojas: Veto, Dólar y el Show de la Realidad",
+    "bajada": "Argentina, un escenario donde la política veta, la economía aprieta y la sociedad, entre risas y lamentos, sigue el show.",
+    "lead": "¡Ah, la Argentina! ¡Un país donde la realidad supera a la ficción, y la ficción, a veces, es más creíble que la realidad! ¡Qué semana, señores! ¡Para alquilar balcones y vender pochoclos!",
+    "cuerpo": [
+      {
+        "type": "paragraph",
+        "text": "Tenemos al gobierno, que, cual prestidigitador de barrio, nos saca leyes de la galera para luego vetarlas con la misma velocidad con la que uno se come un choripán en la cancha. ¡Veto por aquí, veto por allá! ¡Parece que el lema es \"legislar para deslegislar\"! Y claro, las universidades, que son como la abuela que siempre tiene razón, advierten: \"¡Ojo, que la olla no da para más!\". Pero el mago sigue con su truco, mientras el Hospital Garrahan, que es un faro de esperanza, tiene que parar. ¡Paradojas de un país donde la salud pública es un lujo y el veto, un deporte nacional!"
+      },
+      {
+        "type": "paragraph",
+        "text": "Y hablando de deportes, ¡qué paliza en las elecciones de Buenos Aires! ¡La Libertad Avanza, que venía con viento en popa, se encontró con un iceberg electoral! Y el Presidente, que ya tenía el pasaporte en la mano para ir a España, tuvo que \"recalcular\". ¡Claro, es que una cosa es tuitear desde el sillón y otra, la realidad de los votos! Ahora, a seducir gobernadores, ¡como si fueran quinceañeras en un baile de egresados! ¡El Ministerio del Interior, que estaba más dormido que un oso en invierno, de repente se despierta para repartir caramelos!"
+      },
+      {
+        "type": "paragraph",
+        "text": "En la economía, ¡ah, la economía! ¡Esa señora caprichosa que nos tiene a todos con el corazón en la boca! La inflación, que es como el primo pesado que nunca se va de la fiesta, sigue ahí, aunque el gobierno diga que \"desacelera\". ¡Claro, desacelera como un tren que va a 200 km/h y baja a 180! ¡Sigue siendo una locura! El dólar, que es más inestable que un equilibrista en la cuerda floja, sube y baja, y nosotros, los de a pie, con la calculadora en la mano, haciendo malabares para llegar a fin de mes. ¡Y el FMI, que es como el suegro que te presta plata, te apoya, pero te mira con cara de \"te estoy vigilando\"!"
+      }
+    ],
+    "cierre": "En fin, Argentina, un crisol de contradicciones, donde la política se pelea, la economía nos aprieta y la sociedad, ¡la sociedad aguanta, pero hasta cuándo! ¡Un monólogo sin fin, donde el telón nunca baja y la función, lamentablemente, siempre es en vivo! ¡Gracias, señores! ¡Y a seguir pensando, que es gratis... por ahora!",
+    "categoria": "Política y Economía"
+  }
+]

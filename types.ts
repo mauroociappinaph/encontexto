@@ -17,23 +17,29 @@ export interface NewsArticle {
 }
 
 export interface Analysis {
-  id: string;
+  id: number;
+  imageUrl: string;
   date: string;
-  title: string;
-  category: string;
-  body: string;
+  titular: string;
+  bajada: string;
+  lead: string;
+  cuerpo: ContentBlock[];
+  cierre: string;
+  categoria: string;
 }
 
 // New Interfaces for specialized sections
 
-export interface ThemedArticle {
-  id: string;
+export interface AlotatoArticle {
+  id: number;
+  imageUrl: string;
   date: string;
-  title: string;
+  titular: string;
   bajada: string;
   lead: string;
-  body: string; // Markdown content
-  category: string; // e.g., "George", "A lo Tato"
+  cuerpo: ContentBlock[];
+  cierre: string;
+  categoria: string;
 }
 
 export interface QuienEsQuienProfile {
