@@ -1,0 +1,95 @@
+
+export interface ContentBlock {
+  type: 'paragraph' | 'highlight';
+  text: string;
+}
+
+export interface NewsArticle {
+  id: number;
+  imageUrl: string;
+  date: string;
+  titular: string;
+  bajada: string;
+  lead: string;
+  cuerpo: ContentBlock[];
+  cierre: string;
+  categoria: string;
+}
+
+export interface Analysis {
+  id: string;
+  date: string;
+  title: string;
+  category: string;
+  body: string;
+}
+
+// New Interfaces for specialized sections
+
+export interface ThemedArticle {
+  id: string;
+  date: string;
+  title: string;
+  bajada: string;
+  lead: string;
+  body: string; // Markdown content
+  category: string; // e.g., "George", "A lo Tato"
+}
+
+export interface QuienEsQuienProfile {
+  id: string;
+  name: string;
+  imageUrl?: string;
+  briefReview: string; // Breve reseña
+  potentialImpact: string; // Potencial impacto en política y economía
+  risksOpportunities: string; // Posibles riesgos u oportunidades
+  sources: Source[]; // Reusing Source from existing types
+}
+
+export interface RedesTrend {
+  hashtag: string;
+  rank: number;
+  mentions: number;
+  sentiment: 'positive' | 'neutral' | 'negative';
+}
+
+export interface RedesData {
+  id: string;
+  date: string;
+  title: string;
+  summary: string;
+  trends: RedesTrend[];
+}
+
+export interface ZoomArticle {
+  id: string;
+  date: string;
+  title: string;
+  mode: string; // e.g., "objetivo", "crítico", "a favor"
+  body: string; // Markdown content
+}
+
+
+export interface Source {
+  url: string;
+  description: string;
+}
+
+
+export interface Person {
+  id: string;
+  name: string;
+  description: string;
+  newsContext: string;
+  sources: Source[];
+  imageUrl?: string;
+}
+
+export interface DolarRate {
+  moneda: string;
+  casa: string;
+  nombre: string;
+  compra: number;
+  venta: number;
+  fechaActualizacion: string;
+}
