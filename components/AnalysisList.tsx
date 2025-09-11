@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Analysis } from '../types';
 import { fetchAnalyses } from '../services/analysisService';
+import DolarRates from './DolarRates';
 
 const AnalysisList: React.FC = () => {
   const [analyses, setAnalyses] = useState<Analysis[]>([]);
@@ -37,7 +38,7 @@ const AnalysisList: React.FC = () => {
     if (error) {
       return <p className="text-center text-red-500 py-20">{error}</p>;
     }
-    
+
     if (analyses.length === 0 && !isLoading) {
         return <p className="text-center text-gray-500 py-20">No se encontraron análisis.</p>;
     }
@@ -59,8 +60,9 @@ const AnalysisList: React.FC = () => {
 
   return (
     <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <DolarRates />
       <div className="border-b border-gray-200 mb-8 pb-4">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Análisis</h2>
+
       </div>
       {renderContent()}
     </main>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ThemedArticle } from '../types';
 import { fetchA_lo_TatoArticles } from '../services/alotatoService';
+import DolarRates from './DolarRates';
 
 const A_lo_TatoList: React.FC = () => {
   const [articles, setArticles] = useState<ThemedArticle[]>([]);
@@ -51,9 +52,13 @@ const A_lo_TatoList: React.FC = () => {
 
   return (
     <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <DolarRates />
       <div className="border-b border-gray-200 mb-8 pb-4">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A lo Tato</h2>
+
       </div>
+      <h4 className="font-serif font-light text-2xl text-gray-900 mb-4 flex items-center justify-center font-handwriting">
+        Señoras y señores, todos los jueves de la semana, la realidad supera la ficción... y la supera con creces.
+      </h4>
       {renderContent()}
     </main>
   );

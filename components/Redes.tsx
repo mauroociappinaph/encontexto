@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { RedesData, RedesTrend } from '../types';
 import { fetchRedesData } from '../services/redesService';
+import DolarRates from './DolarRates';
 
 const Redes: React.FC = () => {
   const [data, setData] = useState<RedesData | null>(null);
@@ -63,6 +64,7 @@ const Redes: React.FC = () => {
 
   return (
     <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <DolarRates />
       <div className="border-b border-gray-200 mb-8 pb-4">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Redes</h2>
         <p className="text-gray-600 mt-2">{data.summary}</p>

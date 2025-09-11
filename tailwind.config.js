@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        handwriting: ['Dancing Script', 'cursive'],
+      },
       colors: {
         primary: '#B2EBF9',   // Custom primary color
         secondary: '#AEA1EA', // Custom secondary color

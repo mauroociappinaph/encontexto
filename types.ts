@@ -1,7 +1,7 @@
 
 export interface ContentBlock {
   type: 'paragraph' | 'highlight' | 'heading';
-  content: string;
+  text: string;
 }
 
 export interface NewsArticle {
