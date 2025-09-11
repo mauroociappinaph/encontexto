@@ -1,39 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Analysis } from '../types';
-import { fetchAnalyses } from '../services/analysisService';
+import { Noticias } from '../types';
+import { fetchNoticias } from '../services/noticiasService';
 import DolarRates from './DolarRates';
 import NewsCard from './NewsCard';
 import Pagination from './Pagination'; // Import the Pagination component
 
-const AnalysisList: React.FC = () => {
-  const [analyses, setAnalyses] = useState<Analysis[]>([]);
+const NoticiasList: React.FC = () => {
+  const [noticias, setNoticias] = useState<Noticias[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [analysesPerPage] = useState<number>(6); // Number of analyses per page
+  const [noticiasPerPage] = useState<number>(6); // Number of noticias per page
 
   useEffect(() => {
-    const getAnalyses = async () => {
+    const getNoticias = async () => {
       try {
         setIsLoading(true);
-        const analysisData = await fetchAnalyses();
-        const sortedAnalyses = analysisData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-        setAnalyses(sortedAnalyses);
+        const noticiasData = await fetchNoticias();
+        const sortedNoticias = noticiasData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        setNoticias(sortedNoticias);
       } catch (err) {
-        setError('No se pudieron cargar los análisis.');
+        setError('No se pudieron cargar las noticias.');
         console.error(err);
       } finally {
         setIsLoading(false);
       }
     };
-    getAnalyses();
+    getNoticias();
   }, []);
 
-  // Get current analyses
-  const indexOfLastAnalysis = currentPage * analysesPerPage;
-  const indexOfFirstAnalysis = indexOfLastAnalysis - analysesPerPage;
-  const currentAnalyses = analyses.slice(indexOfFirstAnalysis, indexOfLastAnalysis);
+  // Get current noticias
+  const indexOfLastNoticias = currentPage * noticiasPerPage;
+  const indexOfFirstNoticias = indexOfLastNoticias - noticiasPerPage;
+  const currentNoticias = noticias.slice(indexOfFirstNoticias, indexOfLastNoticias);
 
   // Change page
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
@@ -51,14 +51,14 @@ const AnalysisList: React.FC = () => {
       return <p className="text-center text-red-500 py-20">{error}</p>;
     }
 
-    if (analyses.length === 0 && !isLoading) {
-        return <p className="text-center text-gray-500 py-20">No se encontraron análisis.</p>;
+    if (noticias.length === 0 && !isLoading) {
+        return <p className="text-center text-gray-500 py-20">No se encontraron noticias.</p>;
     }
 
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {currentAnalyses.map((analysis) => (
-          <NewsCard key={analysis.id} article={analysis} basePath="/analisis" />
+        {currentNoticias.map((noticia) => (
+          <NewsCard key={noticia.id} article={noticia} basePath="/analisis-politico" />
         ))}
       </div>
     );
@@ -72,8 +72,8 @@ const AnalysisList: React.FC = () => {
       </div>
       {renderContent()}
       <Pagination
-        newsPerPage={analysesPerPage}
-        totalNews={analyses.length}
+        newsPerPage={noticiasPerPage}
+        totalNews={noticias.length}
         paginate={paginate}
         currentPage={currentPage}
       />
@@ -81,4 +81,4 @@ const AnalysisList: React.FC = () => {
   );
 };
 
-export default AnalysisList;
+export default NoticiasList;

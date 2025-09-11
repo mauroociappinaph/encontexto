@@ -16,7 +16,7 @@ export interface NewsArticle {
   categoria: string;
 }
 
-export interface Analysis {
+export interface Noticias {
   id: number;
   imageUrl: string;
   date: string;

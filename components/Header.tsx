@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = ({ onSearchClick }) => {
   const [isOpen, setIsOpen] = useState(false); // State for mobile menu
 
   const getSectionTitle = (pathname: string) => {
-    if (pathname.startsWith('/analisis')) return 'ANÁLISIS';
+    if (pathname.startsWith('/analisis-politico')) return 'ANÁLISIS POLÍTICO';
     if (pathname.startsWith('/george')) return 'GEORGE';
     if (pathname.startsWith('/alotato')) return 'A LO TATO';
     if (pathname.startsWith('/redes')) return 'REDES';
@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ onSearchClick }) => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium tracking-wider uppercase">
             <Link to="/" className="font-serif hover:text-secondary transition-colors">Noticias</Link>
-            <Link to="/analisis" className="font-serif hover:text-secondary transition-colors">Análisis</Link>
+            <Link to="/analisis-politico" className="font-serif hover:text-secondary transition-colors">Análisis Político</Link>
             <Link to="/george" className="font-serif hover:text-secondary transition-colors">George</Link>
             <Link to="/alotato" className="font-serif hover:text-secondary transition-colors">A lo Tato</Link>
             <Link to="/redes" className="font-serif hover:text-secondary transition-colors">Redes</Link>
@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ onSearchClick }) => {
         </div>
         <nav className="flex flex-col items-center space-y-6 text-lg font-medium tracking-wider uppercase mt-8">
           <Link to="/" className="font-serif hover:text-secondary transition-colors" onClick={() => setIsOpen(false)}>Noticias</Link>
-          <Link to="/analisis" className="font-serif hover:text-secondary transition-colors" onClick={() => setIsOpen(false)}>Análisis</Link>
+          <Link to="/analisis-politico" className="font-serif hover:text-secondary transition-colors" onClick={() => setIsOpen(false)}>Análisis Político</Link>
           <Link to="/george" className="font-serif hover:text-secondary transition-colors" onClick={() => setIsOpen(false)}>George</Link>
           <Link to="/alotato" className="font-serif hover:text-secondary transition-colors" onClick={() => setIsOpen(false)}>A lo Tato</Link>
           <Link to="/redes" className="font-serif hover:text-secondary transition-colors" onClick={() => setIsOpen(false)}>Redes</Link>
