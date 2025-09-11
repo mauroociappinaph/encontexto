@@ -4,11 +4,14 @@ import { AlotatoArticle } from '../types';
 import { fetchA_lo_TatoArticles } from '../services/alotatoService';
 import NewsCard from './NewsCard';
 import DolarRates from './DolarRates';
+import Pagination from './Pagination'; // Import the Pagination component
 
 const A_lo_TatoList: React.FC = () => {
   const [articles, setArticles] = useState<AlotatoArticle[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [articlesPerPage] = useState<number>(6); // Number of articles per page
 
   useEffect(() => {
     const getArticles = async () => {
@@ -26,6 +29,14 @@ const A_lo_TatoList: React.FC = () => {
     getArticles();
   }, []);
 
+  // Get current articles
+  const indexOfLastArticle = currentPage * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+  const currentArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle);
+
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
   const renderContent = () => {
     if (isLoading) {
       return <div className="text-center py-20">Cargando artículos de A lo Tato...</div>;
@@ -38,7 +49,7 @@ const A_lo_TatoList: React.FC = () => {
     }
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {articles.map((article) => (
+        {currentArticles.map((article) => (
           <NewsCard key={article.id} article={article} basePath="/alotato" />
         ))}
       </div>
@@ -55,6 +66,12 @@ const A_lo_TatoList: React.FC = () => {
         Señoras y señores, todos los jueves de la semana, la realidad supera la ficción... y la supera con creces.
       </h4>
       {renderContent()}
+      <Pagination
+        newsPerPage={articlesPerPage}
+        totalNews={articles.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </main>
   );
 };

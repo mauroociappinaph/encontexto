@@ -4,11 +4,14 @@ import { Analysis } from '../types';
 import { fetchAnalyses } from '../services/analysisService';
 import DolarRates from './DolarRates';
 import NewsCard from './NewsCard';
+import Pagination from './Pagination'; // Import the Pagination component
 
 const AnalysisList: React.FC = () => {
   const [analyses, setAnalyses] = useState<Analysis[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [analysesPerPage] = useState<number>(6); // Number of analyses per page
 
   useEffect(() => {
     const getAnalyses = async () => {
@@ -26,6 +29,14 @@ const AnalysisList: React.FC = () => {
     };
     getAnalyses();
   }, []);
+
+  // Get current analyses
+  const indexOfLastAnalysis = currentPage * analysesPerPage;
+  const indexOfFirstAnalysis = indexOfLastAnalysis - analysesPerPage;
+  const currentAnalyses = analyses.slice(indexOfFirstAnalysis, indexOfLastAnalysis);
+
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   const renderContent = () => {
     if (isLoading) {
@@ -46,7 +57,7 @@ const AnalysisList: React.FC = () => {
 
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {analyses.map((analysis) => (
+        {currentAnalyses.map((analysis) => (
           <NewsCard key={analysis.id} article={analysis} basePath="/analisis" />
         ))}
       </div>
@@ -60,6 +71,12 @@ const AnalysisList: React.FC = () => {
 
       </div>
       {renderContent()}
+      <Pagination
+        newsPerPage={analysesPerPage}
+        totalNews={analyses.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </main>
   );
 };

@@ -44,7 +44,7 @@ const QuienEsQuienDetail: React.FC = () => {
     <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
       <article className="prose max-w-none">
         {profile.imageUrl && (
-          <img src={profile.imageUrl} alt={profile.name} className="w-full h-64 object-cover mb-6 rounded-md" />
+          <img src={profile.imageUrl} alt={profile.name} className="w-full h-64 object-cover object-top mb-6 rounded-md" />
         )}
         <h1 className="text-4xl font-bold text-gray-900 leading-tight mb-6">{profile.name}</h1>
         <h2 className="text-xl font-semibold text-gray-800 mb-4">Reseña</h2>

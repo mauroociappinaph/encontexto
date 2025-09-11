@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import { ThemedArticle } from '../types';
 import { fetchGeorgeArticles } from '../services/georgeService';
 import DolarRates from './DolarRates';
-
-
-
+import Pagination from './Pagination'; // Import the Pagination component
 
 const GeorgeList: React.FC = () => {
   const [articles, setArticles] = useState<ThemedArticle[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [articlesPerPage] = useState<number>(6); // Number of articles per page
 
   useEffect(() => {
     const getArticles = async () => {
@@ -28,6 +28,14 @@ const GeorgeList: React.FC = () => {
     getArticles();
   }, []);
 
+  // Get current articles
+  const indexOfLastArticle = currentPage * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+  const currentArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle);
+
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
   const renderContent = () => {
     if (isLoading) {
       return <div className="text-center py-20">Cargando artículos de George...</div>;
@@ -40,7 +48,7 @@ const GeorgeList: React.FC = () => {
     }
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {articles.map((article) => (
+        {currentArticles.map((article) => (
           <Link to={`/george/${article.id}`} key={article.id} className="block bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
             <div className="p-6">
               <p className="text-sm text-gray-500 mb-2">{article.date}</p>
@@ -62,6 +70,12 @@ const GeorgeList: React.FC = () => {
   La verdad, aunque duela, cada lunes.
 </h4>
       {renderContent()}
+      <Pagination
+        newsPerPage={articlesPerPage}
+        totalNews={articles.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </main>
   );
 };

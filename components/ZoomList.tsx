@@ -3,11 +3,14 @@ import { NewsArticle } from '../types';
 import NewsCard from './NewsCard';
 import { fetchZoomArticles } from '../services/zoomService';
 import DolarRates from './DolarRates';
+import Pagination from './Pagination'; // Import the Pagination component
 
 const ZoomList: React.FC = () => {
   const [articles, setArticles] = useState<NewsArticle[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [articlesPerPage] = useState<number>(6); // Number of articles per page
 
   useEffect(() => {
     const getArticles = async () => {
@@ -26,6 +29,14 @@ const ZoomList: React.FC = () => {
     getArticles();
   }, []);
 
+  // Get current articles
+  const indexOfLastArticle = currentPage * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+  const currentArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle);
+
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
   const renderContent = () => {
     console.log("Estado de renderContent - isLoading:", isLoading, "error:", error, "articles.length:", articles.length); // Agregado
     if (isLoading) {
@@ -39,7 +50,7 @@ const ZoomList: React.FC = () => {
     }
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {articles.map((article) => {
+        {currentArticles.map((article) => {
           console.log("Article bajada before NewsCard:", article.bajada);
           console.log("Article imageUrl before NewsCard:", article.imageUrl);
           console.log("Article categoria before NewsCard:", article.categoria);
@@ -74,8 +85,15 @@ const ZoomList: React.FC = () => {
 
       </div>
       {renderContent()}
+      <Pagination
+        newsPerPage={articlesPerPage}
+        totalNews={articles.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </main>
   );
 };
 
 export default ZoomList;
+// Forzar recarga del módulo

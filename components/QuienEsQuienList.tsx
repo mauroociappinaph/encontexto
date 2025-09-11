@@ -3,18 +3,21 @@ import { Link } from 'react-router-dom';
 import { QuienEsQuienProfile } from '../types';
 import { fetchQuienEsQuienProfiles } from '../services/quienessosService';
 import DolarRates from './DolarRates';
+import Pagination from './Pagination'; // Import the Pagination component
 
 const QuienEsQuienList: React.FC = () => {
   const [profiles, setProfiles] = useState<QuienEsQuienProfile[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [profilesPerPage] = useState<number>(6); // Number of profiles per page
 
   useEffect(() => {
     const getProfiles = async () => {
       try {
         setIsLoading(true);
         const data = await fetchQuienEsQuienProfiles();
-        setProfiles(data); // No specific sorting for profiles yet
+        setProfiles(data);
       } catch (err) {
         setError('No se pudieron cargar los perfiles de ¿Quién es Quién?.');
         console.error(err);
@@ -24,6 +27,14 @@ const QuienEsQuienList: React.FC = () => {
     };
     getProfiles();
   }, []);
+
+  // Get current profiles
+  const indexOfLastProfile = currentPage * profilesPerPage;
+  const indexOfFirstProfile = indexOfLastProfile - profilesPerPage;
+  const currentProfiles = profiles.slice(indexOfFirstProfile, indexOfLastProfile);
+
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   const renderContent = () => {
     if (isLoading) {
@@ -37,7 +48,7 @@ const QuienEsQuienList: React.FC = () => {
     }
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {profiles.map((profile) => (
+        {currentProfiles.map((profile) => (
           <Link to={`/quienessos/${profile.id}`} key={profile.id} className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
             {profile.imageUrl && (
               <img src={profile.imageUrl} alt={profile.name} className="w-full h-48 object-cover rounded-t-lg" />
@@ -60,6 +71,12 @@ const QuienEsQuienList: React.FC = () => {
 
       </div>
       {renderContent()}
+      <Pagination
+        newsPerPage={profilesPerPage}
+        totalNews={profiles.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </main>
   );
 };
