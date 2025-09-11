@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "id": 1,
+    "imageUrl": "https://placehold.co/600x400/f0f0f0/333?text=Política+Mar+Chiquita",
+    "date": "11 SEP 2025",
+    "titular": "Federico Filippi: Estrategias y Posicionamiento en Mar Chiquita",
+    "bajada": "Filippi parece más interesado en generar ruido que en resolver problemas. La política de Mar Chiquita nunca fue tan entretenida para quien observa desde afuera.",
+    "lead": "Si pensabas que la política local era aburrida, Federico Filippi está acá para demostrarte que la confrontación y la polarización pueden ser un verdadero espectáculo.",
+    "cuerpo": [
+      {
+        "type": "paragraph",
+        "text": "La figura de Federico Filippi, concejal de la Unión Cívica Radical (UCR) en Mar Chiquita, emerge bajo la lupa de un análisis de 'jugador estratégico', revelando un accionar que trasciende la mera fiscalización para adentrarse en el terreno de la estrategia y el posicionamiento. Filippi ha consolidado su rol como una voz **incisiva en la denuncia de problemáticas locales**, tales como la seguridad, la salud y los salarios municipales. Sin embargo, desde esta perspectiva, sus críticas al oficialismo no solo buscan señalar falencias, sino que se configuran como una **herramienta estratégica para la confrontación y el desgaste**. La persistencia en la exposición de estas carencias, más allá de la búsqueda de soluciones concretas, parece orientada a **capitalizar el descontento popular** y a consolidar su figura como principal referente opositor."
+      },
+      {
+        "type": "paragraph",
+        "text": "El accionar de Filippi, en este marco, se interpreta como una **táctica calculada para mantener la polarización**. La **ausencia de propuestas detalladas o una aparente reticencia al consenso** en ciertos temas clave, lejos de ser una debilidad, podría ser una decisión deliberada. Este enfoque le permite operar en un terreno fértil para el crecimiento de figuras críticas, donde la confrontación constante asegura visibilidad y control sobre la agenda pública."
+      },
+      {
+        "type": "paragraph",
+        "text": "En este sentido, la estrategia política de Federico Filippi se enfoca en el **desgaste sistemático de la gestión actual y la construcción de una plataforma propia** de cara a futuros escenarios electorales. Priorizando la visibilidad y el control de la narrativa a través de la crítica constante, su accionar se alinea con los objetivos de un operador político que busca reconfigurar el tablero de poder en el ámbito local."
+      },
+      {
+        "type": "paragraph",
+        "text": "En síntesis, el análisis de Federico Filippi como operador político en Mar Chiquita subraya cómo la denuncia de problemas se convierte en una herramienta estratégica para el posicionamiento y la confrontación, buscando el desgaste del oficialismo y la construcción de una plataforma propia a través de la polarización."
+      }
+    ],
+    "cierre": "Al final, Filippi demuestra que en la política de Mar Chiquita, generar ruido es casi un arte. Para los espectadores, es entretenimiento garantizado; para los vecinos, otra historia.",
+    "categoria": "Política"
+  }
+]

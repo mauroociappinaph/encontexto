@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ZoomArticle } from '../types';
+import { NewsArticle } from '../types';
+import NewsCard from './NewsCard';
 import { fetchZoomArticles } from '../services/zoomService';
 
 const ZoomList: React.FC = () => {
-  const [articles, setArticles] = useState<ZoomArticle[]>([]);
+  const [articles, setArticles] = useState<NewsArticle[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -14,6 +14,7 @@ const ZoomList: React.FC = () => {
         setIsLoading(true);
         const data = await fetchZoomArticles();
         setArticles(data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
+        console.log("Artículos cargados en ZoomList:", data); // Agregado
       } catch (err) {
         setError('No se pudieron cargar los artículos de Zoom.');
         console.error(err);
@@ -25,6 +26,7 @@ const ZoomList: React.FC = () => {
   }, []);
 
   const renderContent = () => {
+    console.log("Estado de renderContent - isLoading:", isLoading, "error:", error, "articles.length:", articles.length); // Agregado
     if (isLoading) {
       return <div className="text-center py-20">Cargando artículos de Zoom...</div>;
     }
@@ -36,16 +38,30 @@ const ZoomList: React.FC = () => {
     }
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {articles.map((article) => (
-          <Link to={`/zoom/${article.id}`} key={article.id} className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div className="p-6">
-              <p className="text-sm text-gray-500 mb-2">{article.date}</p>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{article.title}</h3>
-              <p className="text-base font-semibold text-indigo-600 mb-2">Modo: {article.mode}</p>
-              <p className="text-blue-600 hover:text-blue-800 font-semibold">Leer más &rarr;</p>
-            </div>
-          </Link>
-        ))}
+        {articles.map((article) => {
+          console.log("Article bajada before NewsCard:", article.bajada);
+          console.log("Article imageUrl before NewsCard:", article.imageUrl);
+          console.log("Article categoria before NewsCard:", article.categoria);
+          console.log("Article ID before NewsCard:", article.id, "Number(article.id):", Number(article.id));
+
+          return (
+            <NewsCard
+              key={article.id}
+              article={{
+                id: Number(article.id),
+                imageUrl: article.imageUrl || "https://placehold.co/600x400/f0f0f0/333?text=Zoom",
+                date: article.date,
+                titular: article.titular,
+                bajada: article.bajada,
+                lead: article.lead,
+                cuerpo: article.cuerpo,
+                cierre: article.cierre,
+                categoria: article.categoria
+              }}
+              basePath="/zoom"
+            />
+          );
+        })}
       </div>
     );
   };

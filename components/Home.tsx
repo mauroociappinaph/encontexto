@@ -80,7 +80,7 @@ const Home: React.FC = () => {
       <div>
         {currentNews.length > 0 && (
           <div className="mb-8">
-            <NewsCard article={currentNews[0]} isFeatured={true} />
+            <NewsCard article={currentNews[0]} isFeatured={true} basePath="/noticias" /> {/* Added basePath */}
           </div>
         )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> {/* Added gap-8 */}
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
                 border-b border-gray-200
               `}
             >
-              <NewsCard article={article} />
+              <NewsCard article={article} basePath="/noticias" /> {/* Added basePath */}
             </div>
           ))}
         </div>

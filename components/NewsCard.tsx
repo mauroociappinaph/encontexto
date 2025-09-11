@@ -8,6 +8,7 @@ interface NewsCardProps {
   article: NewsArticle;
   searchTerm?: string;
   isFeatured?: boolean; // Add isFeatured prop
+  basePath?: string; // New prop for base path
 }
 
 const categoryColors: { [key: string]: string } = {
@@ -19,7 +20,7 @@ const categoryColors: { [key: string]: string } = {
   // Add more categories and colors as needed
 };
 
-const NewsCard: React.FC<NewsCardProps> = ({ article, searchTerm, isFeatured }) => {
+const NewsCard: React.FC<NewsCardProps> = ({ article, searchTerm, isFeatured, basePath }) => {
   const categoryColorClass = categoryColors[article.categoria] || 'text-gray-600';
 
   return (
@@ -36,7 +37,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article, searchTerm, isFeatured }) 
           <span className={categoryColorClass}>{article.categoria}</span>
         </div>
         <h2 className={`font-serif font-bold text-black leading-tight mb-3 group-hover:text-gray-700 transition-colors ${isFeatured ? 'text-4xl lg:text-5xl' : 'text-2xl lg:text-3xl'}`}>
-          <Link to={`/noticias/${article.id}`}>
+          <Link to={`${basePath || '/noticias'}/${article.id}`}> {/* Use basePath */}
             <Highlight text={article.titular} highlight={searchTerm || ''} />
           </Link>
         </h2>

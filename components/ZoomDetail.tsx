@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { ZoomArticle } from '../types';
-import { fetchZoomArticles } from '../services/zoomService';
+import { NewsArticle, ContentBlock } from '../types';
+import {fetchZoomArticleById } from '../services/zoomService';
 
 const ZoomDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [article, setArticle] = useState<ZoomArticle | null>(null);
+  const [article, setArticle] = useState<NewsArticle | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -13,10 +13,12 @@ const ZoomDetail: React.FC = () => {
     const getArticle = async () => {
       try {
         setIsLoading(true);
-        const data = await fetchZoomArticles();
-        const foundArticle = data.find(a => a.id === id);
-        if (foundArticle) {
-          setArticle(foundArticle);
+        console.log("ZoomDetail: id recibido:", id);
+        const fetchedArticle = await fetchZoomArticleById(id!);
+        console.log("ZoomDetail: resultado de fetchZoomArticleById:", fetchedArticle);
+        if (fetchedArticle) {
+          setArticle(fetchedArticle);
+          console.log("ZoomDetail: article seteado:", fetchedArticle);
         } else {
           setError('Artículo no encontrado.');
         }
@@ -30,16 +32,20 @@ const ZoomDetail: React.FC = () => {
     getArticle();
   }, [id]);
 
-  const renderBody = (body: string) => {
-    return body.split('\n').map((paragraph, index) => {
-      if (paragraph.trim() === '') return <br key={index} />;
-      const parts = paragraph.split(/(\**.*?\**)/g).map((part, i) => {
-        if (part.startsWith('**') && part.endsWith('**')) {
-          return <strong key={i}>{part.slice(2, -2)}</strong>;
-        }
-        return part;
-      });
-      return <p key={index} className="mb-6 leading-relaxed">{parts}</p>;
+  const renderBody = (body: ContentBlock[]) => {
+    if (!body) {
+      return null;
+    }
+    return body.map((block, index) => {
+      switch (block.type) {
+        case 'paragraph':
+          return <p key={index} className="mb-4 text-lg leading-relaxed">{block.text}</p>;
+        case 'heading':
+          return <h2 key={index} className="text-2xl font-bold mb-4">{block.text}</h2>;
+        // Add more cases for other block types if needed
+        default:
+          return null;
+      }
     });
   };
 
@@ -57,9 +63,9 @@ const ZoomDetail: React.FC = () => {
     <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
       <article className="prose max-w-none">
         <p className="text-sm text-gray-500 mb-2">{article.date}</p>
-        <h1 className="text-5xl font-extrabold text-gray-900 leading-tight mb-6">{article.title}</h1>
-        <p className="text-xl font-semibold text-gray-800 mb-4">Modo de Análisis: {article.mode}</p>
-        <div className="text-gray-700 leading-relaxed">{renderBody(article.body)}</div>
+        <h1 className="text-5xl font-extrabold text-gray-900 leading-tight mb-6">{article.titular}</h1>
+        {/* Eliminar Modo de Análisis: {article.mode} */}
+        <div className="text-gray-700 leading-relaxed">{renderBody(article.cuerpo)}</div>
       </article>
     </main>
   );

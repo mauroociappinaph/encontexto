@@ -8,7 +8,7 @@ const dolarTypes = [
   'oficial',
   'blue',
   'bolsa',
-  'ccl',
+  'contadoconliqui',
   'tarjeta',
   'mayorista',
   'cripto'
