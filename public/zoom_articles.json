@@ -26,5 +26,25 @@
     ],
     "cierre": "Al final, Filippi demuestra que en la política de Mar Chiquita, generar ruido es casi un arte. Para los espectadores, es entretenimiento garantizado; para los vecinos, otra historia.",
     "categoria": "Política"
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://placehold.co/600x400/f0f0f0/333?text=UBA:+¿Autonomía+o+Partidismo?",
+    "date": "12 SEP 2025",
+    "titular": "Escalada de Tensión: La Denuncia del Gobierno a la UBA y el Riesgo para la Autonomía Universitaria",
+    "bajada": "La denuncia del Gobierno a la UBA por el uso de su página oficial para consignas políticas, en el contexto del veto a la ley de financiamiento universitario, revela una escalada preocupante en la tensión entre el poder ejecutivo y las instituciones académicas.",
+    "lead": "Este episodio, lejos de ser un hecho aislado, expone una profunda grieta y plantea serios interrogantes sobre la autonomía universitaria y la libertad de expresión.",
+    "cuerpo": [
+      {
+        "type": "paragraph",
+        "text": "La acusación gubernamental de incumplimiento de los deberes de funcionario público y manipulación de canales oficiales puede interpretarse como un intento de judicializar y, en última instancia, criminalizar la protesta y el disenso institucional. En un contexto donde la UBA, junto a otras universidades, reclama por un financiamiento adecuado, la denuncia parece desviar el foco del debate presupuestario hacia una confrontación legal que podría sentar un precedente peligroso para la autonomía de las casas de estudio. La desproporcionalidad de la medida sugiere una estrategia para deslegitimar a las autoridades universitarias en lugar de buscar soluciones dialogadas a las demandas legítimas."
+      },
+      {
+        "type": "paragraph",
+        "text": "No obstante, la UBA tampoco está exenta de críticas en este escenario. Si bien es comprensible que la institución defienda sus intereses y exprese su postura frente a políticas que considera perjudiciales, la utilización de un canal oficial como su página web para difundir consignas políticas difumina la delgada línea entre la comunicación institucional y la militancia. Esta práctica, aunque motivada por la defensa de la educación pública, podría generar dudas sobre la neutralidad de la universidad como un espacio de debate plural y abierto a todas las corrientes de pensamiento, erosionando la confianza pública en su rol imparcial."
+      }
+    ],
+    "cierre": "Este conflicto no solo evidencia una creciente polarización entre el Gobierno y el ámbito universitario, sino que también subraya la fragilidad del diálogo institucional en Argentina. La confrontación, en lugar de la búsqueda de consensos, amenaza con socavar la calidad educativa y la investigación, pilares fundamentales para el desarrollo del país. La situación actual exige una reflexión profunda sobre los límites de la intervención estatal en la autonomía universitaria y la responsabilidad de las instituciones académicas en el uso de sus plataformas, en aras de preservar la educación pública como un espacio de pensamiento crítico y pluralidad.",
+    "categoria": "Política"
   }
 ]
