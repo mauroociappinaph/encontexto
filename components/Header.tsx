@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ onSearchClick }) => {
   const sectionTitle = getSectionTitle(location.pathname);
 
   return (
-    <header className="border-b border-primary">
+    <header className="border-b border-primary shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top bar */}
         <div className="flex justify-between items-center h-16">
@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ onSearchClick }) => {
       
       {/* Main title */}
       <div className="py-12 md:py-16 text-center border-t border-primary">
-        <h1 className="font-serif text-7xl sm:text-8xl md:text-9xl tracking-tighter font-bold">
+        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl tracking-normal font-bold">
           {sectionTitle}
         </h1>
         <p className="mt-4 text-xl md:text-2xl text-black font-medium italic">

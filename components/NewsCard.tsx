@@ -24,19 +24,19 @@ const NewsCard: React.FC<NewsCardProps> = ({ article, searchTerm, isFeatured, ba
   const categoryColorClass = categoryColors[article.categoria] || 'text-gray-600';
 
   return (
-    <article className={`group relative pb-6 ${isFeatured ? 'md:col-span-2' : ''}`}> {/* Added conditional class */}
+    <article className={`group relative pb-6 shadow-md rounded-lg overflow-hidden ${isFeatured ? 'md:col-span-2' : ''}`}> {/* Added conditional class */}
       <div className="w-full mb-4 overflow-hidden">
         <img 
           src={article.imageUrl} 
           alt={article.titular} 
-          className={`w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out ${isFeatured ? 'md:h-96' : ''}`} 
+          className={`w-full h-auto object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300 ease-in-out ${isFeatured ? 'md:h-96' : ''}`} 
         />
       </div>
-      <div className="px-1">
+      <div className="px-3">
         <div className="text-xs uppercase tracking-wider text-secondary mb-2 font-medium">
           <span className={categoryColorClass}>{article.categoria}</span>
         </div>
-        <h2 className={`font-serif font-bold text-black leading-tight mb-3 group-hover:text-gray-700 transition-colors ${isFeatured ? 'text-4xl lg:text-5xl' : 'text-2xl lg:text-3xl'}`}>
+        <h2 className={`font-serif font-bold text-black leading-normal mb-3 group-hover:text-gray-700 transition-colors ${isFeatured ? 'text-4xl lg:text-5xl' : 'text-2xl lg:text-3xl'}`}>
           <Link to={`${basePath || '/noticias'}/${article.id}`}> {/* Use basePath */}
             <Highlight text={article.titular} highlight={searchTerm || ''} />
           </Link>

@@ -43,7 +43,7 @@ const NewsDetail: React.FC = () => {
     if (block.type === 'paragraph') {
       return <p key={index} className="mb-4 text-gray-700 leading-relaxed">{block.text}</p>;
     } else if (block.type === 'highlight') {
-      return <p key={index} className="mb-4 p-3 bg-gray-100 border-l-4 border-blue-500 text-gray-800 italic">{block.text}</p>;
+      return <p key={index} className="mb-4 p-3 bg-gray-100 border-l-4 border-blue-500 text-gray-800 italic rounded-md shadow-sm">{block.text}</p>;
     }
     return null;
   };
@@ -72,12 +72,12 @@ const NewsDetail: React.FC = () => {
         <img 
           src={article.imageUrl} 
           alt={article.titular} 
-          className="w-full h-64 object-cover mb-6 rounded-md"
+          className="w-full h-64 object-cover mb-6 rounded-md shadow-md"
         />
         <div className="text-xs uppercase tracking-wider text-secondary mb-2 font-medium">
           <span className={categoryColorClass}>{article.categoria}</span>
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 leading-tight mb-4">{article.titular}</h1>
+        <h1 className="text-4xl font-bold text-gray-900 leading-normal mb-4">{article.titular}</h1>
         <p className="text-gray-600 text-sm mb-4">{article.date}</p>
         
         <p className="text-xl font-semibold text-gray-800 mb-4">{article.bajada}</p>

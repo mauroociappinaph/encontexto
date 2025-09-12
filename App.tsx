@@ -40,7 +40,7 @@ const App: React.FC = () => {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="min-h-screen flex flex-col bg-white font-sans">
         <Header /* onSearchClick={() => setIsSearchModalOpen(true)} */ />
         <Routes>
           <Route path="/" element={<Home />} />

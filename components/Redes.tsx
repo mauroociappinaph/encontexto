@@ -49,11 +49,11 @@ const Redes: React.FC = () => {
   const getSentimentIcon = (sentiment: 'positive' | 'neutral' | 'negative') => {
     switch (sentiment) {
       case 'positive':
-        return <FaSmile className="text-green-500" />;
+        return <span className="text-green-500"><FaSmile /></span>;
       case 'negative':
-        return <FaFrown className="text-red-500" />;
+        return <span className="text-red-500"><FaFrown /></span>;
       case 'neutral':
-        return <FaMeh className="text-gray-500" />;
+        return <span className="text-gray-500"><FaMeh /></span>;
       default:
         return null;
     }
@@ -61,10 +61,11 @@ const Redes: React.FC = () => {
 
   // Adaptar el tooltip para Chart.js
   const getOrCreateTooltip = (chart: any) => {
-    let tooltipEl = chart.canvas.parentNode.querySelector('div');
+    let tooltipEl = chart.canvas.parentNode.querySelector('.chartjs-tooltip');
 
     if (!tooltipEl) {
       tooltipEl = document.createElement('div');
+      tooltipEl.classList.add('chartjs-tooltip');
       tooltipEl.style.background = 'rgba(0, 0, 0, 0.7)';
       tooltipEl.style.borderRadius = '3px';
       tooltipEl.style.color = 'white';

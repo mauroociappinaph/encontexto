@@ -87,11 +87,7 @@ const Home: React.FC = () => {
           {currentNews.slice(1).map((article, index) => ( // Slice to render remaining articles
             <div 
               key={article.id} 
-              className={`
-                p-6 
-                ${index % 2 === 0 ? 'md:border-r md:border-gray-200' : ''}
-                border-b border-gray-200
-              `}
+              className="p-6"
             >
               <NewsCard article={article} basePath="/noticias" /> {/* Added basePath */}
             </div>
@@ -109,8 +105,7 @@ const Home: React.FC = () => {
         onSelectCategory={setSelectedCategory}
       />
       <DolarRates />
-      <div className="border-b border-primary mb-8 pb-4">
-      </div>
+      <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">Últimas Noticias</h2>
       {renderContent()}
       <Pagination
         newsPerPage={newsPerPage}
