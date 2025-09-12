@@ -1,1 +1,29 @@
-[]
+
+[
+  {
+    "id": "1",
+    "date": "2025-09-12",
+    "title": "Análisis de Tendencias en Redes Sociales",
+    "summary": "Este es un resumen de las tendencias más relevantes en redes sociales durante la última semana, con un enfoque en temas políticos y económicos.",
+    "trends": [
+      {
+        "hashtag": "Inflacion",
+        "rank": 1,
+        "mentions": 150000,
+        "sentiment": "negative"
+      },
+      {
+        "hashtag": "Elecciones2025",
+        "rank": 2,
+        "mentions": 120000,
+        "sentiment": "neutral"
+      },
+      {
+        "hashtag": "CrecimientoEconomico",
+        "rank": 3,
+        "mentions": 80000,
+        "sentiment": "positive"
+      }
+    ]
+  }
+]
