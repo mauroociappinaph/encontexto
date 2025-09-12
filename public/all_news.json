@@ -109,5 +109,29 @@
     ],
     "cierre": "La Libertad Avanza se enfrenta a un dilema estratégico: para crecer, necesita moderar su discurso y construir alianzas tradicionales, pero al hacerlo, arriesga perder la mística \"anti-casta\" que la definió. El éxito de esta nueva etapa definirá la segunda mitad del mandato de Milei.",
     "categoria": "Política"
+  },
+    {
+    "id": 9,
+    "imageUrl": "https://placehold.co/600x400/f0f0f0/333?text=Dolar+Sube",
+    "date": "12 SEP 2025",
+    "titular": "Presión Cambiaria: El Dólar Vuelve a Subir y se Acerca al Techo de la Banda",
+    "bajada": "La jornada del 12 de septiembre estuvo marcada por un aumento del dólar en Argentina, acercándose al techo de la banda cambiaria. Esto genera preocupación en mercados y gobierno, y podría derivar en nuevas intervenciones del Banco Central.",
+    "lead": "Si sentís que el dólar no deja de subir, no es tu imaginación. Hoy, 12 de septiembre de 2025, la divisa en Argentina trepó hasta superar los $1445 en el Banco Nación, acercándose a la banda de $1470-$1475. La combinación de incertidumbre política post-electoral en Buenos Aires y la expectativa sobre futuras medidas económicas hace que cada vez más argentinos busquen dólares como refugio. Este fenómeno no solo afecta la moneda, sino que también tiene impacto directo en la inflación y el poder adquisitivo.",
+    "cuerpo": [
+      {
+        "type": "paragraph",
+        "text": "La suba del dólar oficial responde a factores internos y externos. Internamente, la inestabilidad política tras las elecciones en Buenos Aires y las dudas sobre medidas económicas futuras incrementan la demanda de dólares. Externamente, las fluctuaciones internacionales y los precios de commodities también influyen, aunque no se detallan en la noticia original."
+      },
+      {
+        "type": "paragraph",
+        "text": "La banda cambiaria, utilizada por el Banco Central para controlar la volatilidad del tipo de cambio, indica que cuando el dólar se acerca al techo, se espera una intervención oficial para evitar una devaluación brusca. Estas intervenciones suelen tener un costo en reservas y pueden generar expectativas de devaluaciones si no se atacan las causas subyacentes de la presión cambiaria."
+      },
+      {
+        "type": "paragraph",
+        "text": "Aunque la inflación no es el foco principal de esta noticia, una subida descontrolada del dólar podría acelerar aún más el ritmo inflacionario, afectando directamente el poder adquisitivo y la estabilidad económica del país."
+      }
+    ],
+    "cierre": "La situación del dólar refleja la compleja coyuntura económica y política argentina. Para quienes buscan entender cómo estas subas afectan su economía, es clave analizar las causas y posibles consecuencias, y no quedarse solo con el titular. Mantenerse informado y crítico permite anticipar escenarios futuros y decisiones inteligentes para proteger el bolsillo.",
+    "categoria": "Política y Economía"
   }
 ]
