@@ -98,5 +98,33 @@
     ],
     "cierre": "La declaración de Victoria Villarruel pone de manifiesto una preocupación legítima sobre la judicialización de la política en América Latina. Si bien la rendición de cuentas es crucial, la recurrencia de presidentes democráticamente elegidos que terminan presos plantea interrogantes sobre la calidad institucional y la independencia judicial en la región. El análisis de los diversos casos revela un panorama complejo, donde la corrupción es un factor predominante, pero también emergen otras motivaciones. La interpretación de las palabras de Villarruel es multifacética, y sus implicaciones en el debate público son profundas, afectando la percepción de la justicia y la estabilidad democrática. El futuro de la región dependerá en gran medida de cómo se aborden estos desafíos, buscando un equilibrio entre la aplicación de la ley y la preservación de la legitimidad democrática. ¡No te quedes solo con el título, el análisis es lo que te empodera!",
     "categoria": "Análisis Político"
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://placehold.co/600x400/f0f0f0/333?text=Las+Tres+Argentinas",
+    "date": "13 SEP 2025",
+    "titular": "Las tres Argentinas que disputan el poder",
+    "bajada": "El tablero político argentino se reordena en tres grandes polos de poder: los gobernadores, La Libertad Avanza y el peronismo. ¿Equilibrio o inestabilidad?",
+    "lead": "En la Argentina de hoy el tablero político parece haberse reordenado en tres polos de fuerza que, más que partidos, son formas de poder. La afirmación de que “los gobernadores, La Libertad Avanza y el peronismo son las tres grandes fuerzas” puede sonar simplificadora, pero refleja con bastante fidelidad el pulso de la política actual.",
+    "cuerpo": [
+      {
+        "type": "paragraph",
+        "text": "Por un lado, están los gobernadores, que después de años de ser vistos como actores de reparto vuelven a escena como protagonistas. Con estructuras provinciales sólidas, buena imagen local y capacidad de administrar recursos, se organizan en frentes como Provincias Unidas. Ya no solo negocian con la Casa Rosada: buscan disputar la agenda nacional. Su poder, sin embargo, es heterogéneo y muchas veces fragmentado. No son un partido, sino una constelación de liderazgos con intereses comunes pero no siempre alineados."
+      },
+      {
+        "type": "paragraph",
+        "text": "En el otro extremo, La Libertad Avanza, la fuerza de Javier Milei, encarna el experimento más disruptivo de la política reciente. Con discurso potente y capacidad de polarización, instaló temas y definió la agenda pública. Sin embargo, sufre el mismo dilema que otros experimentos “antisistema”: gobernar requiere músculo territorial e institucional, y allí aparecen límites. Las derrotas provinciales, especialmente en Buenos Aires, mostraron que su base electoral es fuerte pero no hegemónica."
+      },
+      {
+        "type": "paragraph",
+        "text": "El tercer actor es el peronismo, que lejos de retirarse sigue siendo el animal político más resistente del ecosistema argentino. Dividido en corrientes, en ocasiones paralizado por sus propias disputas, logra sin embargo recomponerse cuando la coyuntura lo empuja a la unidad. La victoria en la provincia más grande del país confirma su vigencia y lo posiciona como contrapeso real al oficialismo nacional."
+      },
+      {
+        "type": "paragraph",
+        "text": "Así, el mapa se ordena en tres Argentinas: la de los gobernadores que reclaman voz propia, la de Milei y su proyecto libertario en busca de consolidación, y la del peronismo que demuestra que aún respira y golpea. Ninguno de estos polos es uniforme ni definitivo; todos están atravesados por tensiones internas. Pero juntos configuran la triple columna vertebral de la política argentina en 2025."
+      }
+    ],
+    "cierre": "La pregunta abierta es si este trípode dará estabilidad al sistema o, por el contrario, será la receta para un equilibrio inestable, donde cada actor tiene fuerza para bloquear pero no para imponer. En esa tensión se juega, quizás, la gobernabilidad del país en los próximos años.",
+    "categoria": "Análisis Político"
   }
 ]
