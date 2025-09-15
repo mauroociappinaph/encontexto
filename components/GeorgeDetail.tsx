@@ -14,7 +14,7 @@ const GeorgeDetail: React.FC = () => {
       try {
         setIsLoading(true);
         const data = await fetchGeorgeArticles();
-        const foundArticle = data.find(a => a.id === id);
+        const foundArticle = data.find(a => a.id === Number(id));
         if (foundArticle) {
           setArticle(foundArticle);
         } else {

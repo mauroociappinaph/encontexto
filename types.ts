@@ -99,3 +99,14 @@ export interface DolarRate {
   venta: number;
   fechaActualizacion: string;
 }
+
+export interface ThemedArticle {
+  id: number;
+  date: string;
+  title: string;
+  introduction: string;
+  body: string;
+  conclusion: string;
+  final_phrase: string;
+  analysis_type: string;
+}
