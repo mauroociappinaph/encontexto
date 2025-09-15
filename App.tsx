@@ -15,7 +15,7 @@ import A_lo_TatoList from './components/A_lo_TatoList';
 import A_lo_TatoDetail from './components/A_lo_TatoDetail';
 import QuienEsQuienList from './components/QuienEsQuienList';
 import QuienEsQuienDetail from './components/QuienEsQuienDetail';
-import Redes from './components/Redes';
+
 import ZoomList from './components/ZoomList';
 import ZoomDetail from './components/ZoomDetail';
 
@@ -55,7 +55,7 @@ const App: React.FC = () => {
           <Route path="/alotato/:id" element={<A_lo_TatoDetail />} />
           <Route path="/quienessos" element={<QuienEsQuienList />} />
           <Route path="/quienessos/:id" element={<QuienEsQuienDetail />} />
-          <Route path="/redes" element={<Redes />} />
+          
           <Route path="/zoom" element={<ZoomList />} />
           <Route path="/zoom/:id" element={<ZoomDetail />} />
           {/* Rutas existentes para noticias generales */}

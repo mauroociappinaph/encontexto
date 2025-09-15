@@ -52,20 +52,7 @@ export interface QuienEsQuienProfile {
   sources: Source[]; // Reusing Source from existing types
 }
 
-export interface RedesTrend {
-  hashtag: string;
-  rank: number;
-  mentions: number;
-  sentiment: 'positive' | 'neutral' | 'negative';
-}
 
-export interface RedesData {
-  id: string;
-  date: string;
-  title: string;
-  summary: string;
-  trends: RedesTrend[];
-}
 
 export interface ZoomArticle {
   id: string;
